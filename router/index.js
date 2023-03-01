@@ -29,7 +29,7 @@ router.post("/", (req, res) => {
 		valid: false,
 	};
 
-	if (validator.validarEdad(params.edad) && validator.validarPrecio(params.precio)) {
+	if (validator.validarEdad(params.edad) && validator.validarPrecio(params.precio) && (params.tipoViaje === "1" || params.tipoViaje === "2")) {
 		params.valid = true;
 	}
 
