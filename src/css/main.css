@@ -47,6 +47,51 @@ input[type="number"] {
 		@apply cursor-default text-gray-600;
 	}
 
+	.form__label {
+		@apply text-lg font-sans font-medium text-white;
+	}
+
+	.form__input {
+		@apply text-base rounded-sm px-2 py-1 w-full disabled:text-white;
+	}
+
+	.form__buttons {
+		@apply w-full flex flex-col items-center justify-center p-2 border-y-4 border-y-white space-y-2 md:space-y-0 md:space-x-2 md:flex-row;
+	}
+
+	.btn {
+		@apply py-2 px-4 border-2 font-medium font-sans w-full rounded-md;
+	}
+
+	.btn__success {
+		@apply bg-green-600 border-green-700 text-white hover:bg-green-700;
+	}
+
+	.btn__danger {
+		@apply bg-red-600 border-red-700 text-white hover:bg-red-700;
+	}
+
+	.container__form {
+		@apply p-2 border-4 rounded-lg flex flex-col items-start justify-start w-96 space-y-2;
+	}
+
+	.form__blue {
+		@apply border-blue-700 bg-blue-500;
+	}
+
+	.container__template {
+		@apply flex justify-center items-center px-[5%] py-4 md:p-4;
+		min-height: theme(minHeight.template);
+	}
+
+	.alert {
+		@apply bg-red-600 px-4 py-2 rounded-md border-4 border-red-700;
+	}
+
+	.alert__message {
+		@apply text-2xl font-sans font-semibold py-2 text-center text-white;
+	}
+
 	.footer {
 		@apply flex items-center justify-center min-h-[2rem];
 	}

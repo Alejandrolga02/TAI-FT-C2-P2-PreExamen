@@ -5,4 +5,9 @@ window.onload = () => {
 		contenido.classList.toggle("hidden");
 		contenido.classList.toggle("flex");
 	});
+
+	document.querySelector("#form").addEventListener("reset", (e) => {
+		e.preventDefault();
+		window.location.href = window.location.href;
+	});
 };

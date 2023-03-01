@@ -1,44 +1,43 @@
 <%- include('partials/header.html') %>
-<main class="flex justify-center items-center min-h-template bg-blue-300 px-[5%] py-4 md:p-4">
-	<form class="p-2 border-4 border-blue-700 bg-blue-500 rounded-lg flex flex-col items-start justify-start w-96 space-y-2" action="/" method="post" id="form">
+<main class="container__template bg-blue-300">
+	<form class="container__form form__blue" action="/" method="post" id="form">
 		<div class="w-full">
-			<label for="numBoleto" class="text-lg font-sans font-medium text-white">Numero de boleto</label>
-			<input type="number" value="<%=numBoleto%>" name="numBoleto" id="numBoleto" class="text-md rounded-sm px-2 py-1 w-full" placeholder="Introduzca el numero" required>
+			<label for="numBoleto" class="form__label">Numero de boleto</label>
+			<input type="number" value="<%=numBoleto%>" name="numBoleto" id="numBoleto" class="form__input" placeholder="Introduzca el numero" required>
 		</div>
 		<div class="w-full">
-			<label for="destino" class="text-lg font-sans font-medium text-white">Destino</label>
-			<input type="text" value="<%=destino%>" name="destino" id="destino" class="text-md rounded-sm px-2 py-1 w-full" placeholder="Introduzca un destino" required>
+			<label for="destino" class="form__label">Destino</label>
+			<input type="text" value="<%=destino%>" name="destino" id="destino" class="form__input" placeholder="Introduzca un destino" required>
 		</div>
 		<div class="w-full">
-			<label for="cliente" class="text-lg font-sans font-medium text-white">Nombre del cliente</label>
-			<input type="text" value="<%=cliente%>" name="cliente" id="cliente" class="text-md rounded-sm px-2 py-1 w-full" placeholder="Introduzca un nombre" required>
+			<label for="cliente" class="form__label">Nombre del cliente</label>
+			<input type="text" value="<%=cliente%>" name="cliente" id="cliente" class="form__input" placeholder="Introduzca un nombre" required>
 		</div>
 		<div class="w-full">
-			<label for="edad" class="text-lg font-sans font-medium text-white">Edad</label>
-			<input type="number" value="<%=edad%>" name="edad" id="edad" class="text-md rounded-sm px-2 py-1 w-full" placeholder="Introduzca una edad" required>
+			<label for="edad" class="form__label">Edad</label>
+			<input type="number" value="<%=edad%>" name="edad" id="edad" class="form__input" placeholder="Introduzca una edad" required>
 		</div>
 		<div class="w-full">
-			<label for="tipoViaje" class="text-lg font-sans font-medium text-white">Tipo de Viaje</label>
-			<select class="text-md rounded-sm px-2 py-1 w-full" name="tipoViaje" id="tipoViaje">
-				<option value="-1" <% if(!tipoViaje) { %> selected <% } %> selected disabled>Seleccione una opcion</option>
+			<label for="tipoViaje" class="form__label">Tipo de Viaje</label>
+			<select class="form__input" name="tipoViaje" id="tipoViaje" required>
+				<option value="-1" <% if(!tipoViaje) { %> selected <% } %> disabled>Seleccione una opcion</option>
 				<option value="1" <% if(tipoViaje === "1") { %> selected <% } %>>Sencillo</option>
 				<option value="2" <% if(tipoViaje === "2") { %> selected <% } %>>Doble</option>
 			</select>
 		</div>
 		<div class="w-full">
-			<label for="precio" class="text-lg font-sans font-medium text-white">Precio</label>
-			<input type="number" value="<%=precio%>" name="precio" id="precio" class="text-md rounded-sm px-2 py-1 w-full" placeholder="Introduzca un precio" required>
+			<label for="precio" class="form__label">Precio</label>
+			<input type="number" value="<%=precio%>" name="precio" id="precio" class="form__input" placeholder="Introduzca un precio" required>
 		</div>
-		<div class="w-full flex flex-col items-center justify-center p-2 border-y-4 border-y-white space-y-2 md:space-y-0 md:space-x-2 md:flex-row">
-			<button type="reset" class="py-2 px-4 bg-red-600 border-2 border-red-700 rounded-md text-white font-medium font-sans hover:bg-red-700 w-full">Limpiar</button>
-			<button type="submit" class="py-2 px-4 bg-green-600 border-2 border-green-700 rounded-md text-white font-medium font-sans hover:bg-green-700 w-full">Calcular</button>
+		<div class="form__buttons">
+			<button type="reset" class="btn btn__danger">Limpiar</button>
+			<button type="submit" class="btn btn__success">Calcular</button>
 		</div>
 		<% if (valid) { %>
 		<%- include('./partials/calcular.html') %>
 		<% } else if (valid === false) { %>
-		<article class="bg-red-600 p-4 rounded-md border-4 border-red-700">
-			<h3 class="text-2xl font-sans font-semibold py-2 text-center text-white">Introduzca valores correctos
-			</h3>
+		<article class="alert">
+			<p class="alert__message">Introduzca valores correctos</>
 		</article>
 		<% } %>
 	</form>
