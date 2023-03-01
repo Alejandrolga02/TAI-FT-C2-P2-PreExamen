@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 		valid: undefined,
 	};
 
-	res.render("index.ejs", params);
+	res.render("index.html", params);
 });
 
 router.post("/", (req, res) => {
@@ -33,12 +33,12 @@ router.post("/", (req, res) => {
 		params.valid = true;
 	}
 
-	res.render("index.ejs", params);
+	res.render("index.html", params);
 });
 
 // La pagina del error va al final de los get/post
 router.use((req, res, next) => {
-	res.status(404).render("error.ejs", { titulo: "Pagina no encontrada" });
+	res.status(404).render("error.html", { titulo: "Pagina no encontrada" });
 	// res.status(404).sendFile(__dirname + "/public/error.html");
 });
 
