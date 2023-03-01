@@ -1,0 +1,68 @@
+<%- include('partials/header.ejs') %>
+	<main class="flex justify-center items-center min-h-template bg-blue-300 px-[5%] py-4 md:p-4">
+		<form
+			class="p-2 border-4 border-blue-700 bg-blue-500 rounded-lg flex flex-col items-start justify-start w-96 space-y-2"
+			action="">
+			<div class="w-full">
+				<label for="numBoleto" class="text-lg font-sans font-medium text-white">Numero de boletos</label>
+				<input type="number" name="numBoleto" id="numBoleto" class="text-md rounded-sm px-2 py-1 w-full"
+					placeholder="Introduzca un numero" required>
+			</div>
+			<div class="w-full">
+				<label for="destino" class="text-lg font-sans font-medium text-white">Destino</label>
+				<input type="text" name="destino" id="destino" class="text-md rounded-sm px-2 py-1 w-full"
+					placeholder="Introduzca un destino" required>
+			</div>
+			<div class="w-full">
+				<label for="cliente" class="text-lg font-sans font-medium text-white">Nombre del cliente</label>
+				<input type="text" name="cliente" id="cliente" class="text-md rounded-sm px-2 py-1 w-full"
+					placeholder="Introduzca un nombre" required>
+			</div>
+			<div class="w-full">
+				<label for="edad" class="text-lg font-sans font-medium text-white">Edad</label>
+				<input type="number" name="edad" id="edad" class="text-md rounded-sm px-2 py-1 w-full"
+					placeholder="Introduzca una edad" required>
+			</div>
+			<div class="w-full">
+				<label for="tipoViaje" class="text-lg font-sans font-medium text-white">Tipo de Viaje</label>
+				<select class="text-md rounded-sm px-2 py-1 w-full" name="tipoViaje" id="tipoViaje">
+					<option value="-1" selected disabled>Seleccione una opcion</option>
+					<option value="1">Sencillo</option>
+					<option value="2">Doble</option>
+				</select>
+			</div>
+			<div class="w-full">
+				<label for="precio" class="text-lg font-sans font-medium text-white">Precio</label>
+				<input type="number" name="precio" id="precio" class="text-md rounded-sm px-2 py-1 w-full"
+					placeholder="Introduzca un precio" required>
+			</div>
+			<div
+				class="w-full flex flex-col items-center justify-center p-2 border-y-4 border-y-white space-y-2 md:space-y-0 md:space-x-2 md:flex-row">
+				<button type="submit"
+					class="py-2 px-4 bg-purple-700 border-2 border-purple-500 rounded-md text-white font-medium font-sans hover:bg-purple-900 w-full">Calcular</button>
+				<button type="reset"
+					class="py-2 px-4 bg-red-600 border-2 border-red-500 rounded-md text-white font-medium font-sans hover:bg-red-700 w-full">Limpiar</button>
+			</div>
+			<div class="w-full">
+				<label for="subtotal" class="text-lg font-sans font-medium text-white">Subtotal</label>
+				<input type="number" name="subtotal" id="subtotal"
+					class="text-md rounded-sm px-2 py-1 w-full disabled:text-white" disabled>
+			</div>
+			<div class="w-full">
+				<label for="impuesto" class="text-lg font-sans font-medium text-white">Impuesto</label>
+				<input type="number" name="impuesto" id="impuesto"
+					class="text-md rounded-sm px-2 py-1 w-full disabled:text-white" disabled>
+			</div>
+			<div class="w-full">
+				<label for="descuento" class="text-lg font-sans font-medium text-white">Descuento</label>
+				<input type="number" name="descuento" id="descuento"
+					class="text-md rounded-sm px-2 py-1 w-full disabled:text-white" disabled>
+			</div>
+			<div class="w-full">
+				<label for="total" class="text-lg font-sans font-medium text-white">Total a pagar</label>
+				<input type="number" name="total" id="total"
+					class="text-md rounded-sm px-2 py-1 w-full disabled:text-white" disabled>
+			</div>
+		</form>
+	</main>
+	<%- include('partials/footer.ejs') %>
