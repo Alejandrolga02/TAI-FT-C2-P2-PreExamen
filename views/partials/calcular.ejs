@@ -1,0 +1,33 @@
+<%
+	let subtotal = 0, precioFinal = 0, descuento = 0;
+
+	if (tipoViaje === "2") { 
+		subtotal = precio * 1.80; 
+	} else if (tipoViaje === "1") {
+		subtotal = precio;
+	}
+
+	if (edad >= 60) {
+		descuento = subtotal * 0.50;
+	}
+
+	const impuesto = (subtotal - descuento) * 0.16;
+	precioFinal = subtotal - descuento + impuesto;
+%>
+
+<div class="w-full">
+	<label for="subtotal" class="text-lg font-sans font-medium text-white">Subtotal</label>
+	<input type="number" value="<%=subtotal%>" name="subtotal" id="subtotal" class="text-md rounded-sm px-2 py-1 w-full disabled:text-white" disabled>
+</div>
+<div class="w-full">
+	<label for="impuesto" class="text-lg font-sans font-medium text-white">Impuesto</label>
+	<input type="number" value="<%=impuesto%>" name="impuesto" id="impuesto" class="text-md rounded-sm px-2 py-1 w-full disabled:text-white" disabled>
+</div>
+<div class="w-full">
+	<label for="descuento" class="text-lg font-sans font-medium text-white">Descuento</label>
+	<input type="number" value="<%=descuento%>" name="descuento" id="descuento" class="text-md rounded-sm px-2 py-1 w-full disabled:text-white" disabled>
+</div>
+<div class="w-full">
+	<label for="total" class="text-lg font-sans font-medium text-white">Total a pagar</label>
+	<input type="number" value="<%=precioFinal%>" name="total" id="total" class="text-md rounded-sm px-2 py-1 w-full disabled:text-white" disabled>
+</div>
